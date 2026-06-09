@@ -11,18 +11,19 @@ last_synced_at: null
 
 ## Epics
 
-| ID | Epic | Status | Jira |
-|----|------|--------|------|
+| ID | Epic | Status | File | Jira |
+|----|------|--------|------|------|
+
+<!-- One row per epic. Detail in jira/epics/E-NN-*.md — body = Jira Epic description. -->
 
 ## Active stories
 
-> Only epics listed in `active_epics` (status `IN_PROGRESS`). Refreshed by `/aaa-pm-plan`.
+> Only epics in `active_epics` (`IN_PROGRESS`). Refreshed by `/aaa-pm-plan`.
 
-| ID | Epic | Story | Priority | Jira |
-|----|------|-------|----------|------|
+| ID | Epic | Story | Priority | File | Jira |
+|----|------|-------|----------|------|------|
 
-<!-- Optional: add ## Epic detail — E-01 and ## Story detail — S-01 blocks below tables.
-     Use templates/epic.template.md and story.template.md — helps readers and Jira push. -->
+<!-- Detail in jira/stories/S-NN-*.md — acceptance criteria, Handoff QA, Definition of Done. -->
 
 ## Task board
 
@@ -30,7 +31,7 @@ last_synced_at: null
 |------|-------------|------|
 | 0 | 0 | 0 |
 
-<!-- Counts: number of `.md` files in tasks/todo, tasks/inprogress, tasks/done (exclude README). -->
+<!-- Counts: `.md` files in tasks/todo, inprogress, done (exclude README). -->
 
 ## Sync note
 

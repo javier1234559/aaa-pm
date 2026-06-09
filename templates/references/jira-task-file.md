@@ -1,6 +1,6 @@
 # Task file format (`docs/pm/jira/tasks/...`)
 
-**Authoring template:** `templates/task-file.template.md` (full sections — Context, What to build, Acceptance, Jira description).
+**Authoring template:** `templates/task-file.template.md`
 
 **Filename:** `T-NN-kebab-title.md` — stable when moving between folders.
 
@@ -12,16 +12,19 @@
 
 ## Minimum quality bar
 
-A task file is **ready for push** when a new reader can answer:
-
 1. **Why** — ## Context  
 2. **What** — ## What to build  
-3. **Done when** — ## Acceptance criteria (testable bullets)  
-4. **Not doing** — ## Out of scope (this task)
+3. **Done when** — testable bullets (Dev self-check)  
+4. **Not doing** — ## Out of scope  
+
+**QA tests the parent Story** (acceptance criteria + Handoff QA + DoD) — not each Task.
+
+When the story is ready for QA, Dev fills **Handoff QA** on `jira/stories/S-XX-*.md` (path + data).
 
 ## Push
 
-- **`/aaa-pm-push`** copies **## Jira description** into the Jira issue body (or merges Context + Acceptance if that section is empty).
+- **`/aaa-pm-push`** copies the **full task file body** (from `# Title` through sections) into Jira — no separate Jira description block.
+- Include `Local ID: T-XX` in **Context** or after frontmatter fields in body for sync.
 - Fill frontmatter `jira:` after create.
 
 ## Sync

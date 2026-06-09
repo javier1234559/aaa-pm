@@ -1,8 +1,8 @@
 ---
 name: aaa-pm-about
 description: >-
-  Help for the aaa-pm skill pack — docs/pm layout, workflow, templates, and examples.
-  Use when user asks aaa-pm help, how to use, what skill next, or about project brief / jira pm.
+  Help for the aaa-pm skill pack — docs/pm layout, epics/stories/tasks, workflow, PROPOSAL templates.
+  Use when user asks aaa-pm help, PO workflow, or what skill next.
 metadata:
   pack: aaa-pm
 disable-model-invocation: true
@@ -10,49 +10,49 @@ disable-model-invocation: true
 
 # AAA PM — about
 
-Solo PM workflow for one developer: **`docs/pm/`** + **Jira**. Works in **any** product repo.
+Solo PO + Dev workflow: **`docs/pm/`** + **Jira**. Ticket shapes: pack **`PROPOSAL.md`** (`{pack-root}/PROPOSAL.md`).
 
 ## Pack root
 
-Folder containing `templates/` and `skills/`:
-
-- Published: `aaa-pm/`
-- Installed: e.g. `.agents/skills/aaa-pm/`
-
-Read `{pack-root}/templates/…` and `templates/references/paths.md` — never assume root `PROJECT_BRIEF.md` on new projects.
+`{pack-root}/templates/` — see `templates/references/paths.md`.
 
 ## Source of truth
 
 | Artifact | Role |
 |----------|------|
 | `docs/pm/project-brief/OVERVIEW.md` | Product — goal, features, scope |
-| `docs/pm/jira/OVERVIEW.md` | Epics + active stories |
-| `docs/pm/jira/tasks/{todo,inprogress,done}/` | One file per task (push → Jira) |
-| `docs/pm/intake/raw-intake/` | Verbatim pasted feedback |
-| `docs/pm/plan/CHANGELOG.md` | Plan version / push events |
-| **Jira** | Execution status — sync moves task files |
+| `docs/pm/jira/OVERVIEW.md` | Board index — tables + sync note |
+| `docs/pm/jira/epics/E-NN-*.md` | One epic — body = Jira Epic description |
+| `docs/pm/jira/stories/S-NN-*.md` | One story — AC, Handoff QA, DoD |
+| `docs/pm/jira/tasks/{todo,inprogress,done}/` | One task per file |
+| `docs/qa/ACCESS.md` | Staging, login, seed (once per project) |
+| `docs/pm/intake/raw-intake/` | Verbatim feedback |
+| `docs/pm/plan/CHANGELOG.md` | Plan / push events |
+| **Jira** | Execution status — `/aaa-pm-sync` moves task files |
 
 Gate: `brief_status: complete` on project brief (`/aaa-pm-setup`).
+
+**Rule:** local markdown = Jira description (no shortened paste block).
 
 ## Skills
 
 | Skill | When |
 | --- | --- |
 | `/aaa-pm-about` | This help |
-| `/aaa-pm-setup` | Scaffold `docs/pm/` or migrate legacy brief |
-| `/aaa-pm-plan` | Epics, stories, task files in `tasks/todo/` |
-| `/aaa-pm-push` | Create Jira from task files |
-| `/aaa-pm-intake` | Paste stakeholder feedback |
-| `/aaa-pm-sync` | Jira → move task files + OVERVIEW |
-| `/aaa-pm-task-doing` | Issue URL/key → dev context file |
+| `/aaa-pm-setup` | Scaffold `docs/pm/` + `docs/qa/ACCESS.md` |
+| `/aaa-pm-plan` | Epic + story files + tasks |
+| `/aaa-pm-push` | Create Jira from files |
+| `/aaa-pm-intake` | Stakeholder feedback |
+| `/aaa-pm-sync` | Jira → task folders + OVERVIEW |
+| `/aaa-pm-task-doing` | Issue URL/key → dev context |
 
 ## Flows
 
 **New project:** `setup` → fill brief → `plan` → `push`
 
-**Daily:** `task-doing` + implementation skill in new chat
+**Daily (Dev):** `task-doing` + implementation skill
 
-**Feedback:** `intake` → small: task file + `push` delta · large: `plan`
+**PO:** `intake` · `plan` + `push` · `sync` on a schedule · QA per PROPOSAL (Handoff → AC → DoD)
 
 **Board changed in Jira:** `sync`
 
@@ -60,13 +60,15 @@ Gate: `brief_status: complete` on project brief (`/aaa-pm-setup`).
 
 | Level | Where |
 |-------|--------|
-| **Epic** | `jira/OVERVIEW.md` — all statuses |
-| **Story** | `jira/OVERVIEW.md` — active epic(s) only |
-| **Task** | `jira/tasks/todo/` (etc.) — one markdown file each |
+| **Epic** | `jira/epics/E-NN-*.md` + row on OVERVIEW |
+| **Story** | `jira/stories/S-NN-*.md` + row on OVERVIEW (active epic only) |
+| **Task** | `jira/tasks/todo/` etc. |
 
 Rules: `templates/references/epic-status.md`, `templates/references/jira-task-file.md`
 
-Examples (pack-only): `templates/examples/example-jira-overview.md`, `example-task-file.md`, `templates/examples/aaa-portfolio/`
+Examples (pack-only): `templates/examples/`
+
+PO skill cheat sheet: **`PROPOSAL.md`** § Bonus — PO workflow using AI skills.
 
 ## Pick one
 
@@ -76,4 +78,4 @@ Examples (pack-only): `templates/examples/example-jira-overview.md`, `example-ta
 - **D** — `/aaa-pm-intake`
 - **E** — `/aaa-pm-sync`
 - **F** — `/aaa-pm-task-doing`
-- **G** — Read `templates/examples/` for samples
+- **G** — Read `PROPOSAL.md` + `templates/examples/`

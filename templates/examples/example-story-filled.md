@@ -1,45 +1,56 @@
-# Example — filled Story (readable first pass)
+# Example — filled Story file
 
-Maps to one epic **In scope** bullet. Table row + detail block.
+**Path:** `docs/pm/jira/stories/S-01-comments-persist.md`
 
-## Table row
+```markdown
+---
+id: S-01
+epic: E-01
+priority: Must
+jira: PORT-6
+---
 
-| ID | Epic | Story | Priority | Jira |
-|----|------|-------|----------|------|
-| S-01 | E-01 | Users still see their comments after refreshing the page. | Must | |
+# Story — [S-01] Users still see their comments after refreshing the page
 
-## Story detail — S-01
+**Epic:** E-01 — Support comments on client records and Slack notify  
+**Priority:** Must  
+**Jira:** PORT-6
 
-**Epic:** E-01 — Support comments on client records and Slack notify
-
-**Summary:**  
+## Summary
 Users still see their comments after refreshing the page.
 
-**User story:**  
-As an **internal user**, I want **my comments to remain visible after I reload the page**, so that **I can trust the record without re-asking the team**.
+## User story
+As an **internal user**, I want **my comments to remain visible after I reload the page**, so that **I can trust the client record without re-asking the team**.
 
-**Comes from epic bullet:**  
+## From Epic
 - Comments persist after every page load
 
-**What "done" means (product level):**  
-- A comment posted today is still listed after full browser refresh on the same client  
-- Empty state only when no comments exist — not because data failed to load  
+## Acceptance criteria
+- A comment posted today is still listed after full browser refresh on the same client
+- Empty state only when no comments exist — not because data failed to load
 
-**Not in this story:**  
-- Slack notification (S-02)  
-- Posting UI (S-03) — though T-01 may add minimal UI if required for persistence demo  
+## Not in this story
+- Slack notification (S-02)
+- Posting UI beyond minimal needed to demonstrate persistence
 
-**Priority rationale:**  
+## Priority rationale
 Must — without persistence, the other stories in the epic have no foundation.
 
-**Jira Story description (paste on push):**  
+## Handoff QA
+
+Project test access: `docs/qa/ACCESS.md`
+
+- **Path:** 
+- **Data for this story:** 
+- **Notes:** 
+
+## Definition of Done
+
+- [ ] All acceptance criteria pass on staging
+- [ ] Handoff QA filled — path and data verified
+- [ ] No open Blocker or Critical bugs linked to this story
+- [ ] Feature visible on staging matches what Dev demoed
+- [ ] Regression: related flows still work (or "N/A" with reason)
 ```
-Story: Users still see comments after refreshing the page.
-User story: As an internal user, I want comments to remain after reload, so that I trust the client record.
-Done when:
-- Posted comment visible after full page refresh
-- Empty state only when truly no comments
-Epic: E-01
-Local ID: S-01
-Brief: docs/pm/project-brief/OVERVIEW.md
-```
+
+QA tests **acceptance criteria** here — not individual task files. Dev fills **Handoff QA** before Phase 4.

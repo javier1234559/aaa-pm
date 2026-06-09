@@ -4,17 +4,22 @@
 
 **Skills:** `/aaa-pm-about` · `/aaa-pm-setup` · `/aaa-pm-plan` · `/aaa-pm-push` · `/aaa-pm-intake` · `/aaa-pm-sync` · `/aaa-pm-task-doing`
 
-**Paths:** All PM artifacts live under `docs/pm/` — see `README.md`.
+**Paths:** All PM artifacts under `docs/pm/` — see `README.md`. Ticket templates: aaa-pm pack **`PROPOSAL.md`**.
 
 | Folder | Role |
 |--------|------|
-| `project-brief/` | Product — goal, features, scope (`OVERVIEW.md` + `CHANGELOG.md`) |
-| `intake/` | Pasted feedback index + `raw-intake/` verbatim files |
-| `plan/` | Planning history (`CHANGELOG.md` only) |
-| `jira/` | Board — `OVERVIEW.md` (epics + active stories) + `tasks/{todo,inprogress,done}/` |
+| `project-brief/` | Product — goal, features, scope |
+| `intake/` | Pasted feedback + `raw-intake/` |
+| `plan/` | Planning history (`CHANGELOG.md`) |
+| `jira/OVERVIEW.md` | Board index — tables + sync note |
+| `jira/epics/` | One file per epic — body = Jira Epic description |
+| `jira/stories/` | One file per story — AC, Handoff QA, DoD |
+| `jira/tasks/{todo,inprogress,done}/` | One file per task |
 
-**Gate:** `docs/pm/project-brief/OVERVIEW.md` frontmatter `brief_status: complete` (set by `/aaa-pm-setup`).
+**`docs/qa/ACCESS.md`** — staging, login, seed (once per project).
+
+**Gate:** `brief_status: complete` on project brief (`/aaa-pm-setup`).
+
+**Rule:** local markdown = Jira description.
 
 **Git push:** After work, ask: *"Update the repo so the team can use these docs?"* Only if **yes**: `git pull` then `git push`.
-
-**Relation to `aaa-qa`:** QA test docs live in `docs/qa/` — separate pack; link from brief §Assets if needed.

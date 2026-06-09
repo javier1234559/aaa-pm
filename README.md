@@ -2,34 +2,34 @@
 
 [![skills.sh](https://skills.sh/b/javier1234559/aaa-pm)](https://skills.sh/javier1234559/aaa-pm)
 
-Reusable **Agent Skills** for solo PM: **`docs/pm/`** in the product repo + **Jira** execution. Install with the [skills CLI](https://github.com/vercel-labs/skills), then invoke with `/skill-name`. GitHub: **`javier1234559/aaa-pm`** (or `Automation-Architecture/aaa-portfolio` monorepo path `aaa-pm/`).
-
-All skills use the **`aaa-pm-`** prefix to avoid clashing with other packs (e.g. `aaa-qa-`).
+Reusable **Agent Skills** for solo PO + Dev: **`docs/pm/`** + **Jira**. Ticket shapes in pack **`PROPOSAL.md`** (local markdown = Jira description).
 
 | Folder | Contents |
 | --- | --- |
 | `skills/` | One skill per folder + `SKILL.md` |
-| `templates/` | Scaffold copied to product repos (`docs/pm/`) + epic / story / task templates |
-| `templates/examples/` | Filled examples (pack-only; agents read for context) |
-| `SKILL.md` | Umbrella `aaa-pm` → start with `/aaa-pm-about` |
+| `templates/` | Scaffold + epic / story / task templates |
+| `templates/examples/` | Filled examples (pack-only) |
+| `SKILL.md` | Umbrella `aaa-pm` → `/aaa-pm-about` |
+| `PROPOSAL.md` | Ticket templates, QA flow, PO skill bonus |
 
-Full conventions: [`templates/repo-root/AGENTS.md`](templates/repo-root/AGENTS.md).
+**Product repo after setup:**
 
-**Product repo after setup:** `docs/pm/` — `project-brief/`, `intake/raw-intake/`, `plan/CHANGELOG.md`, `jira/OVERVIEW.md` + `jira/tasks/{todo,inprogress,done}/`.
+- `docs/pm/` — brief, intake, plan, `jira/OVERVIEW.md`, **`jira/epics/`**, **`jira/stories/`**, `jira/tasks/`
+- `docs/qa/ACCESS.md` — test access (staging, login)
 
 ## Skills (`/…`)
 
 | Skill | Purpose |
 | --- | --- |
-| `aaa-pm-about` | Pack overview and which skill to run |
-| `aaa-pm-setup` | Create empty `docs/pm/` scaffold (any project) |
-| `aaa-pm-plan` | Epics + stories on `jira/OVERVIEW` + task files in `tasks/todo/` |
-| `aaa-pm-push` | Create Jira from plan (Atlassian MCP) |
-| `aaa-pm-intake` | Paste feedback → `raw-intake/` + brief / jira updates |
-| `aaa-pm-sync` | Jira status → move task files + refresh `OVERVIEW` |
-| `aaa-pm-task-doing` | One ticket → `.cursor/context/<KEY>.md` |
+| `aaa-pm-about` | Pack overview |
+| `aaa-pm-setup` | Scaffold `docs/pm/` + `docs/qa/ACCESS.md` |
+| `aaa-pm-plan` | Epic + story files + task files |
+| `aaa-pm-push` | Jira create (full file body = description) |
+| `aaa-pm-intake` | Feedback → raw-intake + updates |
+| `aaa-pm-sync` | Jira status → task folders |
+| `aaa-pm-task-doing` | One ticket → dev context |
 
-Typical flow: **setup → plan → push** · daily: **task-doing** · feedback: **intake** · board drift: **sync**
+Typical flow: **setup → plan → push** · **intake** · **sync** · PO QA per **PROPOSAL.md**
 
 ## Install
 
@@ -37,15 +37,11 @@ Typical flow: **setup → plan → push** · daily: **task-doing** · feedback: 
 npx skills add javier1234559/aaa-pm --skill '*' -y
 ```
 
-**Local path (before publish):**
+**Local path:**
 
 ```bash
-npx skills add ./aaa-pm --skill '*' -y
+npx skills add ./.claude/skills/aaa-pm --skill '*' -y
 ```
-
-In the product repo: **`/aaa-pm-setup`**, then the skills above.
-
-Legacy root **`PROJECT_BRIEF.md`**: setup can migrate → `docs/pm/` — see [`templates/references/migrate-legacy-brief.md`](templates/references/migrate-legacy-brief.md).
 
 ## Update
 
@@ -60,11 +56,9 @@ npx skills update aaa-pm-about aaa-pm-setup aaa-pm-plan aaa-pm-push \
 
 | Pack | Scope |
 | --- | --- |
-| **`aaa-pm`** | `docs/pm/` — brief, intake, plan log, Jira task files |
-| **`aaa-qa`** | `docs/qa/` — charter, requirements, dev workflows, test cases |
-
-Independent installs; link from brief §Assets if both packs are used.
+| **`aaa-pm`** | `docs/pm/` + `docs/qa/ACCESS.md` |
+| **`aaa-qa`** | Extended `docs/qa/` (test cases, etc.) — optional |
 
 ## Links
 
-- [skills.sh — Docs](https://www.skills.sh/docs) · [skills CLI](https://github.com/vercel-labs/skills) · [Agent Skills spec](https://agentskills.io/specification)
+- [skills.sh — Docs](https://www.skills.sh/docs) · [Agent Skills spec](https://agentskills.io/specification)

@@ -23,8 +23,10 @@ Reconcile **`docs/pm/jira/`** with live Jira. Jira is truth for **status**; brie
 1. Read MCP schemas before calling.
 2. Fetch issues for `jira_project_key` (JQL e.g. `project = KEY ORDER BY updated DESC`).
 3. Match issues to local artifacts:
-   - Task files: frontmatter `jira:` key, else `Local ID: T-XX` in ## Jira description
-   - OVERVIEW epic/story rows: `Jira` column
+   - Task files: frontmatter `jira:` key, else `Local ID: T-XX` in body
+   - Epic files: `docs/pm/jira/epics/` — frontmatter `jira:` or `Local ID: E-XX`
+   - Story files: `docs/pm/jira/stories/` — frontmatter `jira:` or `Local ID: S-XX`
+   - OVERVIEW epic/story rows: `Jira` column (sync with file frontmatter)
 
 ## Updates
 
