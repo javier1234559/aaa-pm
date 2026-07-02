@@ -78,11 +78,13 @@ Project test access: `docs/qa/ACCESS.md`
 
 | Rule | Detail |
 |------|--------|
-| Derive from epic | Every story maps to an epic **In scope** bullet |
+| Derive from epic | Every story maps to an epic **In scope** bullet — prefer **one bullet → one story** |
+| Story size | One user benefit; 3–6 AC; split instead of one story + many tasks underneath |
 | Acceptance criteria on Story | QA Phase 4 — 3–6 testable bullets |
 | Handoff QA | Dev fills before QA; empty at plan time |
 | Definition of Done | Same checklist every story; QA ticks last |
-| No tech in story | APIs, routes, files → **task** files |
+| No tech in story | APIs, routes, files → **task** files (added later by Dev) |
+| Tasks at plan time | **Do not** create task files during `/aaa-pm-plan` unless user asks |
 
 ## Review
 

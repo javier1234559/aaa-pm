@@ -412,7 +412,7 @@ The **`aaa-pm`** pack exposes these commands in Cursor:
 
 - **`/aaa-pm-about`** — Pack layout and which skill to run next.
 - **`/aaa-pm-setup`** — Scaffold `docs/pm/` and complete the project brief (new project or brief not finished).
-- **`/aaa-pm-plan`** — Phase 2: Epics, Stories, Tasks from the brief (Handoff QA and DoD left empty at plan time).
+- **`/aaa-pm-plan`** — Phase 2: Epics + Stories from the brief (one story per user benefit; **no task files** unless you ask). Handoff QA and DoD left empty at plan time.
 - **`/aaa-pm-push`** — Create or update Jira issues after you approve the plan in chat.
 - **`/aaa-pm-intake`** — Paste CEO/client feedback into `intake/raw-intake/` and update brief or backlog.
 - **`/aaa-pm-sync`** — Reconcile Jira status with local task files and `jira/OVERVIEW.md`.
@@ -428,7 +428,7 @@ Atlassian MCP is used inside `push` and `sync` — you do not need separate Jira
 CEO collects requirements. You run **`/aaa-pm-intake`** with proposal or transcript, or add files under `docs/pm/intake/raw-intake/`. Skip `plan` until `brief_status: complete` on the project brief.
 
 **Phase 2 — Clarify and standardize**  
-After the three-way meeting: **`/aaa-pm-plan`** → review the epic/story/task tree in chat → approve → **`/aaa-pm-push`**. Create **`docs/qa/ACCESS.md`** on first plan (or during setup once the pack scaffolds it).
+After the three-way meeting: **`/aaa-pm-plan`** → review epic/story tree in chat → approve → **`/aaa-pm-push`**. Dev adds task files when implementation starts. Create **`docs/qa/ACCESS.md`** on first plan (or during setup once the pack scaffolds it).
 
 **Phase 3 — Execution**  
 Dev codes and updates Jira. You run **`/aaa-pm-sync`** on a fixed schedule (e.g. twice per week), not ad hoc pings. Dev fills **Handoff QA** on the Story and posts *ready for QA* on the project channel.

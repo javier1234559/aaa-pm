@@ -14,7 +14,7 @@ All `aaa-pm-*` skills read and write under **`docs/pm/`** unless migrating legac
 | `docs/pm/jira/OVERVIEW.md` | Board index — epic/story tables, task counts, sync note |
 | `docs/pm/jira/epics/E-NN-*.md` | One file per epic — body = Jira Epic description |
 | `docs/pm/jira/stories/S-NN-*.md` | One file per story — AC, Handoff QA, DoD |
-| `docs/pm/jira/tasks/todo/` | Task files not started / Jira To Do |
+| `docs/pm/jira/tasks/todo/` | Task files — Dev/PO when work starts (not auto at plan) |
 | `docs/pm/jira/tasks/inprogress/` | Task files in flight / Jira In Progress |
 | `docs/pm/jira/tasks/done/` | Task files completed / Jira Done |
 | `docs/qa/ACCESS.md` | Staging URL, login, seed data — once per project |

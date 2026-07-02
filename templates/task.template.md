@@ -1,8 +1,10 @@
 # Task template (planning scratchpad)
 
-Use while **`/aaa-pm-plan`** or **`/aaa-pm-intake`** before creating the real file. The **source of truth** for execution is the markdown file under `docs/pm/jira/tasks/todo/` — copy this structure into **`task-file.template.md`**.
+Use while **`/aaa-pm-intake`** or when the user/Dev breaks a story into implementation work. **Not** created by default during **`/aaa-pm-plan`**.
 
-One task ≈ **0.5–2 days** of focused work. No sub-tasks unless the user asks.
+The **source of truth** for execution is the markdown file under `docs/pm/jira/tasks/todo/` — copy this structure into **`task-file.template.md`**.
+
+One task ≈ **0.5–2 days** of focused work. Do not auto-generate a batch of sub-tasks under one story — PO/Dev adds tasks when work starts.
 
 ---
 

@@ -58,8 +58,9 @@ linked_feature: F-01
 ## Writing tips
 
 - Verb-led title · outcomes in **In scope** · clear **Out of scope**
-- Each **In scope** bullet → one Story file in `jira/stories/`
-- Only `IN_PROGRESS` epics get stories + tasks — `references/epic-status.md`
+- Each **In scope** bullet → **one Story file** in `jira/stories/` (split; do not merge into one gate story)
+- Only `IN_PROGRESS` epics get stories — `references/epic-status.md`, `references/plan-story-first.md`
+- Task files come later when Dev starts — not during `/aaa-pm-plan` unless user asks
 
 ## Review
 

@@ -73,7 +73,7 @@ Ask **one section group at a time** when gaps remain.
 
 Optional: §Assumptions, §Assets, §Decision log.
 
-**Do not** fill `jira/epics`, `jira/stories`, or task files during setup — **`/aaa-pm-plan`** owns that.
+**Do not** fill `jira/epics`, `jira/stories`, or task files during setup — **`/aaa-pm-plan`** owns epics and stories; tasks come later.
 
 ## Step 3 — Confirm
 

@@ -32,8 +32,8 @@ Additional:
 ## Atlassian MCP
 
 1. Read MCP tool schemas (`plugin-atlassian-atlassian`) before calling.
-2. Create order: **Epics → Stories (link Epic) → Tasks (link Story)**.
-3. No sub-tasks unless user asked.
+2. Create order: **Epics → Stories (link Epic) → Tasks (link Story, only if task files exist)**.
+3. **Default:** push Epics + Stories only. Create Jira **sub-tasks** only when local task files exist **and** the user asked for sub-tasks (or task files were explicitly created).
 4. **Descriptions** — use full markdown file body (from `# Title` or first heading through end):
    - **Epic:** `docs/pm/jira/epics/E-NN-*.md`
    - **Story:** `docs/pm/jira/stories/S-NN-*.md`

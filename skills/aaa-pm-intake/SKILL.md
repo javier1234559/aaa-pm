@@ -30,7 +30,7 @@ Infer source if missing.
 2. Create **`docs/pm/intake/raw-intake/YYYY-MM-DD-<source>-<short-topic>.md`** (verbatim paste + frontmatter from `templates/intake/raw-intake/_template.md`).
 3. Split into discrete items; classify per `templates/references/intake-types.md`.
 4. Per item:
-   - **Small** → new task file in `docs/pm/jira/tasks/todo/` under active epic; update stories table if new story; set `jira_pushed: false` on jira OVERVIEW if new work
+   - **Small** → new task file in `docs/pm/jira/tasks/todo/` under active story (or new story if needed); set `jira_pushed: false` on jira OVERVIEW if new work. Do not use intake to replace proper story split — large items → **`/aaa-pm-plan`**
    - **QUESTION** → §Open questions row on brief
    - **Large CHANGE** → patch §Features / §Scope / §Decision log on brief; recommend **`/aaa-pm-plan`**
 5. Append row to **`docs/pm/intake/OVERVIEW.md`** (link to raw file).

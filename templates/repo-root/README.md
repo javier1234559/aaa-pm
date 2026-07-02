@@ -23,8 +23,8 @@ docs/pm/
 ### Typical flow
 
 1. `/aaa-pm-setup` — scaffold (first time)
-2. `/aaa-pm-plan` — epics, stories, task files in `tasks/todo/`
-3. `/aaa-pm-push` — create Jira from task files
+2. `/aaa-pm-plan` — epics + stories (tasks when you start work or ask)
+3. `/aaa-pm-push` — create Jira from epic/story files (tasks if any)
 4. `/aaa-pm-task-doing` — start one ticket
 5. `/aaa-pm-sync` — Jira status → move task files
 6. `/aaa-pm-intake` — paste CEO/client feedback

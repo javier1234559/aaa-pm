@@ -40,7 +40,7 @@ Gate: `brief_status: complete` on project brief (`/aaa-pm-setup`).
 | --- | --- |
 | `/aaa-pm-about` | This help |
 | `/aaa-pm-setup` | Scaffold `docs/pm/` + `docs/qa/ACCESS.md` |
-| `/aaa-pm-plan` | Epic + story files + tasks |
+| `/aaa-pm-plan` | Epic + story files (tasks deferred unless user asks) |
 | `/aaa-pm-push` | Create Jira from files |
 | `/aaa-pm-intake` | Stakeholder feedback |
 | `/aaa-pm-sync` | Jira → task folders + OVERVIEW |
@@ -58,11 +58,13 @@ Gate: `brief_status: complete` on project brief (`/aaa-pm-setup`).
 
 ## Plan shape
 
-| Level | Where |
-|-------|--------|
-| **Epic** | `jira/epics/E-NN-*.md` + row on OVERVIEW |
-| **Story** | `jira/stories/S-NN-*.md` + row on OVERVIEW (active epic only) |
-| **Task** | `jira/tasks/todo/` etc. |
+| Level | When created | Where |
+|-------|----------------|--------|
+| **Epic** | `/aaa-pm-plan` | `jira/epics/E-NN-*.md` + row on OVERVIEW |
+| **Story** | `/aaa-pm-plan` (one per user benefit) | `jira/stories/S-NN-*.md` + row on OVERVIEW (active epic only) |
+| **Task** | Dev/PO when work starts, or `/aaa-pm-intake` (small) — **not** auto at plan | `jira/tasks/todo/` etc. |
+
+**Stories first:** see `templates/references/plan-story-first.md`.
 
 Rules: `templates/references/epic-status.md`, `templates/references/jira-task-file.md`
 

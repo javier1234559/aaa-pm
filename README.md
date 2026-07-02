@@ -23,7 +23,7 @@ Reusable **Agent Skills** for solo PO + Dev: **`docs/pm/`** + **Jira**. Ticket s
 | --- | --- |
 | `aaa-pm-about` | Pack overview |
 | `aaa-pm-setup` | Scaffold `docs/pm/` + `docs/qa/ACCESS.md` |
-| `aaa-pm-plan` | Epic + story files + task files |
+| `aaa-pm-plan` | Epic + story files (tasks when Dev asks or work starts) |
 | `aaa-pm-push` | Jira create (full file body = description) |
 | `aaa-pm-intake` | Feedback → raw-intake + updates |
 | `aaa-pm-sync` | Jira status → task folders |
