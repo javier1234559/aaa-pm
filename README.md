@@ -14,7 +14,7 @@ Reusable **Agent Skills** for solo PO + Dev: **`docs/pm/`** + **Jira**. Ticket s
 
 **Product repo after setup:**
 
-- `docs/pm/` — brief, intake, plan, `jira/OVERVIEW.md`, **`jira/epics/`**, **`jira/stories/`**, `jira/tasks/`
+- `docs/pm/` — brief, intake, plan, `jira/OVERVIEW.md`, **`jira/epics/{todo,inprogress,done}/`**, **`jira/stories/{todo,inprogress,done}/`**, `jira/tasks/`
 - `docs/qa/ACCESS.md` — test access (staging, login)
 
 ## Skills (`/…`)
@@ -26,10 +26,12 @@ Reusable **Agent Skills** for solo PO + Dev: **`docs/pm/`** + **Jira**. Ticket s
 | `aaa-pm-plan` | Epic + story files (tasks when Dev asks or work starts) |
 | `aaa-pm-push` | Jira create (full file body = description) |
 | `aaa-pm-intake` | Feedback → raw-intake + updates |
-| `aaa-pm-sync` | Jira status → task folders |
-| `aaa-pm-task-doing` | One ticket → dev context |
+| `aaa-pm-sync` | Pull new Jira tasks + todo-only status reconcile |
+| `aaa-pm-task-start` | Pick task → inprogress → implementation plan |
+| `aaa-pm-task-done` | Mark task done after review |
+| `aaa-pm-task-add` | Add emergent tasks to a story |
 
-Typical flow: **setup → plan → push** · **intake** · **sync** · PO QA per **PROPOSAL.md**
+Typical flow: **setup → plan → push** · **task-start → task-done** · **sync** (when dev 2 adds Jira tickets) · PO QA per **PROPOSAL.md**
 
 ## Install
 
@@ -47,7 +49,8 @@ npx skills add ./.claude/skills/aaa-pm --skill '*' -y
 
 ```bash
 npx skills update aaa-pm-about aaa-pm-setup aaa-pm-plan aaa-pm-push \
-  aaa-pm-intake aaa-pm-sync aaa-pm-task-doing aaa-pm -y
+  aaa-pm-intake aaa-pm-sync aaa-pm-task-start aaa-pm-task-done aaa-pm-task-add \
+  aaa-pm -y
 ```
 
 `npx skills update` refreshes agent skills only — not `docs/pm/` in product repos.

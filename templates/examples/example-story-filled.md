@@ -1,6 +1,6 @@
 # Example — filled Story file
 
-**Path:** `docs/pm/jira/stories/S-01-comments-persist.md`
+**Path:** `docs/pm/jira/stories/todo/S-01-comments-persist.md`
 
 ```markdown
 ---

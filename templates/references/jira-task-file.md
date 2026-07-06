@@ -19,7 +19,7 @@
 
 **QA tests the parent Story** (acceptance criteria + Handoff QA + DoD) — not each Task.
 
-When the story is ready for QA, Dev fills **Handoff QA** on `jira/stories/S-XX-*.md` (path + data).
+When the story is ready for QA, Dev fills **Handoff QA** on `jira/stories/{todo,inprogress,done}/S-XX-*.md` (path + data).
 
 ## Push
 
@@ -29,7 +29,7 @@ When the story is ready for QA, Dev fills **Handoff QA** on `jira/stories/S-XX-*
 
 ## Sync
 
-- Match on `jira:` key, else `Local ID: T-XX` in Jira description.
+- Match on `jira:` key, else `Local ID: T-XX` in Jira description (see `sync-matching.md`).
 - Move file between `todo` / `inprogress` / `done` — do not rename.
 
 ## Types

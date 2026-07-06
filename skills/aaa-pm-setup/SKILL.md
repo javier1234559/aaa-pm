@@ -30,8 +30,8 @@ If `docs/pm/project-brief/OVERVIEW.md` **missing**, copy from pack:
 | `templates/intake/raw-intake/` | `docs/pm/intake/raw-intake/` |
 | `templates/plan/CHANGELOG.template.md` | `docs/pm/plan/CHANGELOG.md` |
 | `templates/jira/OVERVIEW.template.md` | `docs/pm/jira/OVERVIEW.md` |
-| `templates/jira/epics/` | `docs/pm/jira/epics/` (README + `_template.md`) |
-| `templates/jira/stories/` | `docs/pm/jira/stories/` (README + `_template.md`) |
+| `templates/jira/epics/` | `docs/pm/jira/epics/` (README, `_template.md`, `todo/`, `inprogress/`, `done/`) |
+| `templates/jira/stories/` | `docs/pm/jira/stories/` (README, `_template.md`, `todo/`, `inprogress/`, `done/`) |
 | `templates/jira/tasks/todo/` | `docs/pm/jira/tasks/todo/` |
 | `templates/jira/tasks/inprogress/` | `docs/pm/jira/tasks/inprogress/` |
 | `templates/jira/tasks/done/` | `docs/pm/jira/tasks/done/` |
@@ -42,6 +42,14 @@ Create `docs/qa/` if missing. **Do not** copy `templates/examples/` into the pro
 If scaffold exists → ask: **continue brief**, **merge new input**, or **migrate from root `PROJECT_BRIEF.md`**.
 
 If `docs/qa/ACCESS.md` missing on existing scaffold → copy ACCESS template only.
+
+### Step 0c — Migrate flat epic/story folders (existing repos)
+
+If epics or stories exist as flat files (`jira/epics/E-*.md` without subfolders):
+
+1. Read `templates/references/migrate-epic-story-folders.md`.
+2. Scaffold `epics/{todo,inprogress,done}/` and `stories/{todo,inprogress,done}/` if missing.
+3. Move files per status; refresh OVERVIEW board counts.
 
 ## Step 0b — Migrate legacy `PROJECT_BRIEF.md`
 

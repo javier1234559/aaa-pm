@@ -1,6 +1,6 @@
 # Example — filled Epic file
 
-**Path:** `docs/pm/jira/epics/E-01-comments-slack.md`  
+**Path:** `docs/pm/jira/epics/inprogress/E-01-comments-slack.md`  
 **OVERVIEW row:** E-01 · IN_PROGRESS · link to this file
 
 ```markdown

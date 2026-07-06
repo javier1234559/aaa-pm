@@ -415,10 +415,12 @@ The **`aaa-pm`** pack exposes these commands in Cursor:
 - **`/aaa-pm-plan`** — Phase 2: Epics + Stories from the brief (one story per user benefit; **no task files** unless you ask). Handoff QA and DoD left empty at plan time.
 - **`/aaa-pm-push`** — Create or update Jira issues after you approve the plan in chat.
 - **`/aaa-pm-intake`** — Paste CEO/client feedback into `intake/raw-intake/` and update brief or backlog.
-- **`/aaa-pm-sync`** — Reconcile Jira status with local task files and `jira/OVERVIEW.md`.
-- **`/aaa-pm-task-doing`** — Load one Jira issue into dev context (mainly for Dev; PO can use to inspect a ticket).
+- **`/aaa-pm-sync`** — Pull new Jira tasks into `tasks/todo/`, backfill `jira:` keys, reconcile **todo folders only** (default). Say **`sync full`** to reconcile all folders.
+- **`/aaa-pm-task-start`** — Dev picks a task by ID/name → moves to inprogress → presents implementation plan for approval.
+- **`/aaa-pm-task-done`** — Dev marks task done after review; moves file to `tasks/done/`.
+- **`/aaa-pm-task-add`** — Add emergent tasks to a story without full re-plan.
 
-**Dev** uses `task-doing` daily. **PO** uses setup → plan → push → intake → sync. Phase 4 QA in this proposal is manual (ACCESS → Handoff → acceptance criteria → DoD) until the pack adds a dedicated QA skill.
+**Dev** uses `task-start` → implement → `task-done` daily. **PO** uses setup → plan → push → intake → sync. Phase 4 QA in this proposal is manual (ACCESS → Handoff → acceptance criteria → DoD) until the pack adds a dedicated QA skill.
 
 Atlassian MCP is used inside `push` and `sync` — you do not need separate Jira skills.
 
@@ -431,7 +433,7 @@ CEO collects requirements. You run **`/aaa-pm-intake`** with proposal or transcr
 After the three-way meeting: **`/aaa-pm-plan`** → review epic/story tree in chat → approve → **`/aaa-pm-push`**. Dev adds task files when implementation starts. Create **`docs/qa/ACCESS.md`** on first plan (or during setup once the pack scaffolds it).
 
 **Phase 3 — Execution**  
-Dev codes and updates Jira. You run **`/aaa-pm-sync`** on a fixed schedule (e.g. twice per week), not ad hoc pings. Dev fills **Handoff QA** on the Story and posts *ready for QA* on the project channel.
+Dev codes; primary direction is **local → Jira** via `push`. Run **`/aaa-pm-sync`** when a second dev adds tickets on Jira (default pulls new tasks into `tasks/todo/` only). Dev uses **`/aaa-pm-task-start`** → approve plan → implement → **`/aaa-pm-task-done`**. Emergent tasks → **`/aaa-pm-task-add`**. Dev fills **Handoff QA** on the Story and posts *ready for QA* on the project channel.
 
 **Phase 4 — Testing**  
 You act as QA: follow Step 6 in **How to use** above. No aaa-pm skill yet — open the Story file and `ACCESS.md`.
@@ -452,20 +454,20 @@ Walkthrough video and CEO demo — outside the pack.
 
 **Typical PO week**
 
-- Start of week: `/aaa-pm-sync`. Re-plan only if scope shifted (`plan` + `push`).
+- Start of week: `/aaa-pm-sync` if dev 2 may have added Jira tasks. Re-plan only if scope shifted (`plan` + `push`).
 - Mid-week: `/aaa-pm-intake` only when CEO or client sends feedback.
 - When Dev says a story is ready: check Handoff QA is filled, then run Phase 4 QA.
-- End of week: `/aaa-pm-sync` so task folders match the board.
+- End of week: `/aaa-pm-sync` to pull any new Jira tasks into `tasks/todo/`.
 
 **New tickets without re-planning the whole epic**  
-Add task or story files locally, then **`/aaa-pm-push`** (delta — only items missing Jira keys).
+Add task files with **`/aaa-pm-task-add`**, then **`/aaa-pm-push`** (delta — only items missing Jira keys).
 
 ### Habits that save time
 
 1. **One chat, one job** — Separate sessions for `plan`, `push`, and `sync`. Confirm before `push`.
 2. **Brief complete before `plan`** — The pack gate avoids vague epics.
 3. **No Phase 4 without Handoff** — Dev fills path and data; you do not guess the UI.
-4. **Sync on a schedule** — Two fixed slots per week is enough for one Dev.
+4. **Sync when Jira gains tickets** — Default sync is incremental (todo + inbound only). Use **`sync full`** only after long board drift.
 5. **Repo content = Jira description** — Edit Story/Task files under `docs/pm/`, then push or sync; do not edit Jira in isolation.
 6. **`/aaa-pm-about` when unsure** — Stops the agent from mixing PM work with implementation.
 
@@ -480,7 +482,9 @@ PO: /aaa-pm-setup  (once)
        ↓
 PO: /aaa-pm-plan  →  approve  →  /aaa-pm-push
        ↓
-Dev: /aaa-pm-task-doing  +  implementation
+Dev: /aaa-pm-task-start  →  approve  →  implement  →  /aaa-pm-task-done
+       ↓ (emergent work)
+     /aaa-pm-task-add  →  /aaa-pm-push (delta)
        ↓
 PO: /aaa-pm-sync  (scheduled)
        ↓

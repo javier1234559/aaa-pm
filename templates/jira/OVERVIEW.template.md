@@ -14,16 +14,30 @@ last_synced_at: null
 | ID | Epic | Status | File | Jira |
 |----|------|--------|------|------|
 
-<!-- One row per epic. Detail in jira/epics/E-NN-*.md — body = Jira Epic description. -->
+<!-- One row per epic. Detail in jira/epics/{todo,inprogress,done}/E-NN-*.md — body = Jira Epic description. -->
 
-## Active stories
+## Epic board
 
-> Only epics in `active_epics` (`IN_PROGRESS`). Refreshed by `/aaa-pm-plan`.
+| Todo | In progress | Done |
+|------|-------------|------|
+| 0 | 0 | 0 |
+
+<!-- Counts: .md files in epics/todo, inprogress, done (exclude README, _template). -->
+
+## Stories
 
 | ID | Epic | Story | Priority | File | Jira |
 |----|------|-------|----------|------|------|
 
-<!-- Detail in jira/stories/S-NN-*.md — acceptance criteria, Handoff QA, Definition of Done. -->
+<!-- Detail in jira/stories/{todo,inprogress,done}/S-NN-*.md — acceptance criteria, Handoff QA, Definition of Done. -->
+
+## Story board
+
+| Todo | In progress | Done |
+|------|-------------|------|
+| 0 | 0 | 0 |
+
+<!-- Counts: .md files in stories/todo, inprogress, done (exclude README, _template). -->
 
 ## Task board
 
@@ -31,7 +45,7 @@ last_synced_at: null
 |------|-------------|------|
 | 0 | 0 | 0 |
 
-<!-- Counts: `.md` files in tasks/todo, inprogress, done (exclude README). -->
+<!-- Counts: .md files in tasks/todo, inprogress, done (exclude README). -->
 
 ## Sync note
 

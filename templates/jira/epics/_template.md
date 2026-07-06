@@ -16,7 +16,7 @@ linked_feature:
 ## Who cares
 
 ## In scope (outcomes)
-<!-- Each bullet often becomes one Story in jira/stories/. -->
+<!-- Each bullet often becomes one Story in jira/stories/todo/. -->
 -
 
 ## Out of scope

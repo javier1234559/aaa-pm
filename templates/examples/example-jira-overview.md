@@ -36,4 +36,4 @@ last_synced_at: null
 _Last sync: —_
 ```
 
-Detail in `jira/epics/` and `jira/stories/`. Tasks in `jira/tasks/todo/`. E-02 has no active stories until `IN_PROGRESS`.
+Detail in `jira/epics/{todo,inprogress,done}/` and `jira/stories/{todo,inprogress,done}/`. Tasks in `jira/tasks/todo/`. E-02 has no active stories until moved to `inprogress/`.

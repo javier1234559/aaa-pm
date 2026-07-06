@@ -2,8 +2,14 @@
 
 Use when **`/aaa-pm-plan`** defines or refreshes work.
 
-**Path:** `docs/pm/jira/epics/E-NN-kebab-title.md`  
+**Path:** `docs/pm/jira/epics/{todo|inprogress|done}/E-NN-kebab-title.md`  
 **Index:** summary row in `docs/pm/jira/OVERVIEW.md` § Epics (link to file).
+
+| Folder | When |
+|--------|------|
+| `epics/todo/` | Queued epic |
+| `epics/inprogress/` | Active epic (default: one at a time) |
+| `epics/done/` | Shipped epic |
 
 One epic ≈ one Jira Epic (1–2 weeks solo). **File body = Jira Epic description** — no separate paste block.
 
@@ -13,13 +19,13 @@ One epic ≈ one Jira Epic (1–2 weeks solo). **File body = Jira Epic descripti
 
 | ID | Epic | Status | File | Jira |
 |----|------|--------|------|------|
-| E-01 | Short verb-led title | IN_PROGRESS | [E-01-….md](./epics/E-01-….md) | |
+| E-01 | Short verb-led title | IN_PROGRESS | [E-01-….md](./epics/inprogress/E-01-….md) | |
 
 **Status:** `TODO` | `IN_PROGRESS` | `DONE`
 
 ---
 
-## File content (`jira/epics/E-01-….md`)
+## File content (`jira/epics/inprogress/E-01-….md`)
 
 ```markdown
 ---
@@ -58,8 +64,8 @@ linked_feature: F-01
 ## Writing tips
 
 - Verb-led title · outcomes in **In scope** · clear **Out of scope**
-- Each **In scope** bullet → **one Story file** in `jira/stories/` (split; do not merge into one gate story)
-- Only `IN_PROGRESS` epics get stories — `references/epic-status.md`, `references/plan-story-first.md`
+- Each **In scope** bullet → **one Story file** in `jira/stories/todo/` (split; do not merge into one gate story)
+- Only `inprogress/` epics get stories — `references/epic-status.md`, `references/plan-story-first.md`
 - Task files come later when Dev starts — not during `/aaa-pm-plan` unless user asks
 
 ## Review

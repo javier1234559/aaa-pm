@@ -2,8 +2,14 @@
 
 Use when **`/aaa-pm-plan`** breaks an **active** epic into stories.
 
-**Path:** `docs/pm/jira/stories/S-NN-kebab-title.md`  
-**Index:** row in `docs/pm/jira/OVERVIEW.md` § Active stories (link to file).
+**Path:** `docs/pm/jira/stories/{todo|inprogress|done}/S-NN-kebab-title.md`  
+**Index:** row in `docs/pm/jira/OVERVIEW.md` § Stories (link to file).
+
+| Folder | When |
+|--------|------|
+| `stories/todo/` | Not started (default at plan) |
+| `stories/inprogress/` | Being implemented |
+| `stories/done/` | Shipped |
 
 **File body = Jira Story description** — no separate paste block.
 
@@ -15,7 +21,7 @@ Stories are **product language only**. **QA tests acceptance criteria** on the S
 
 | ID | Epic | Story | Priority | File | Jira |
 |----|------|-------|----------|------|------|
-| S-01 | E-01 | One sentence user benefit | Must | [S-01-….md](./stories/S-01-….md) | |
+| S-01 | E-01 | One sentence user benefit | Must | [S-01-….md](./stories/todo/S-01-….md) | |
 
 **Good story line:** *Staff view the case list and filter by application type.*
 
@@ -23,7 +29,7 @@ Stories are **product language only**. **QA tests acceptance criteria** on the S
 
 ---
 
-## File content (`jira/stories/S-01-….md`)
+## File content (`jira/stories/todo/S-01-….md`)
 
 ```markdown
 ---

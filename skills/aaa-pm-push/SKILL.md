@@ -22,10 +22,11 @@ Additional:
 ## Before MCP
 
 1. Read `jira_project_key` from `docs/pm/project-brief/OVERVIEW.md` or `docs/pm/jira/OVERVIEW.md`.
-2. Scan:
-   - `docs/pm/jira/epics/*.md` — empty `jira:` in frontmatter or empty OVERVIEW Jira column
-   - `docs/pm/jira/stories/*.md` — same (active epics only)
+2. Scan (all status subfolders):
+   - `docs/pm/jira/epics/{todo,inprogress,done}/**/*.md` — empty `jira:` in frontmatter or empty OVERVIEW Jira column
+   - `docs/pm/jira/stories/{todo,inprogress,done}/**/*.md` — same
    - `docs/pm/jira/tasks/todo/**/*.md` — empty `jira:` in frontmatter
+   - Legacy flat: `epics/E-*.md`, `stories/S-*.md` if present
 3. List **create plan** in chat: Epic → Story → Task (local IDs + titles).
 4. Wait for explicit approval.
 
@@ -35,10 +36,10 @@ Additional:
 2. Create order: **Epics → Stories (link Epic) → Tasks (link Story, only if task files exist)**.
 3. **Default:** push Epics + Stories only. Create Jira **sub-tasks** only when local task files exist **and** the user asked for sub-tasks (or task files were explicitly created).
 4. **Descriptions** — use full markdown file body (from `# Title` or first heading through end):
-   - **Epic:** `docs/pm/jira/epics/E-NN-*.md`
-   - **Story:** `docs/pm/jira/stories/S-NN-*.md`
+   - **Epic:** epic file in any `epics/{folder}/`
+   - **Story:** story file in any `stories/{folder}/`
    - **Task:** task file (exclude YAML frontmatter; include body sections)
-   - Ensure `Local ID: E-XX` / `S-XX` / `T-XX` appears in description for sync.
+   - Ensure `**Local ID:** E-XX` / `S-XX` / `T-XX` appears in description for sync (see `templates/references/sync-matching.md`).
 5. Map `type:` frontmatter: BUG→Bug; FEAT/CHANGE→Story/Task; CHORE/SPIKE→Task.
 6. Do not transition to Done.
 

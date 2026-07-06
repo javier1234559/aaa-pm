@@ -23,15 +23,15 @@ Default for **`/aaa-pm-plan`**. Read before creating epics, stories, or tasks.
 
 ## Tasks (sub-tasks)
 
-- **Who adds them:** Dev or PO when work starts — manually, via **`/aaa-pm-intake`** (small items), or by asking the agent to break one story down.
+- **Who adds them:** Dev or PO when work starts — **`/aaa-pm-task-add`**, **`/aaa-pm-intake`** (small items), or by asking the agent to break one story down.
 - **When plan may create tasks:** Only if the user explicitly requests it (e.g. "also create tasks", "break into sub-tasks").
 - **Jira:** Tasks push as **sub-tasks** under a Story only when task files exist and the user asked for sub-tasks. Default push = Epics + Stories only.
 
 ## Epic activation
 
 - List **all** epics on OVERVIEW + one file per epic.
-- **`IN_PROGRESS`** epic(s) get **story files** only (default).
-- **`TODO`** / **`DONE`** epics — no story files until activated.
+- **`inprogress/`** epic(s) get **story files** in `stories/todo/` only (default).
+- **`todo/`** / **`done/`** epics — no new story files until activated.
 
 ## Task board counts
 
